@@ -1,82 +1,55 @@
-import React, { Component, Fragment } from 'react';
-import { connect } from "react-redux";
+import React from 'react';
 import PropTypes from "prop-types";
 import { Field, reduxForm } from 'redux-form'
+import { required, email, maxLengthP } from './loginValidation.js';
 
-// const mapStateToProps = state => ({
-//     // prop: state.reducer.prop
-// });
-
-// const mapDispatchToProps = {
-//     // prop: action
-// };
-
-class LoginForm extends Component {
-    state = {
-        // put initial state here
-    };
-
-    componentDidMount() {
-        //put code that needs to execute once on component mounting
-    }
-
-    componentDidUpdate(prevProps) {
-        if (this.propsDidChange(prevProps)) {
-            //put code that needs to execute when the props of the component have updated
-        }
-    }
-
-    propsDidChange(prevProps) {
-        //check if the necessary props have actually updated
-    }
-
-    static propTypes = {
-        //check types of props
-        name: PropTypes.string,
-        label: PropTypes.string,
-        placeholder: PropTypes.string,
-    };
-
-    render() {
-        const { handleSubmit, pristine, reset, submitting } = this.props
-        return <Fragment>
-            <form onSubmit={handleSubmit}>
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
+    <div>
+        <label>{label}</label>
+        <div>
+            <input {...input} placeholder={label} type={type} />
+            {touched &&
+                ((error && <span>{error}</span>))}
+        </div>
+    </div>
+)
+const LoginForm = ({ handleSubmit }) => {
+    return <>
+        <form onSubmit={handleSubmit}>
+            <div>
                 <div>
-                    <label>Email</label>
-                    <div>
-                        <Field
-                            name="email"
-                            component="input"
-                            type="email"
-                            placeholder="Email"
-                        />
-                    </div>
+                    <Field
+                        name="email"
+                        label="Email"
+                        component={renderField}
+                        type="email"
+                        validate={[required, email]}
+                    />
                 </div>
+            </div>
+            <div>
                 <div>
-                    <label>Password</label>
-                    <div>
-                        <Field
-                            name="password"
-                            component="input"
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </div>
+                    <Field
+                        name="password"
+                        label="Password"
+                        component={renderField}
+                        type="password"
+                        validate={[required, maxLengthP]}
+                    />
                 </div>
-                <div>
-                    <button type="submit" disabled={pristine || submitting}>
-                        Submit
-                    </button>
-                    <button type="button" disabled={pristine || submitting} onClick={reset}>
-                        Clear Values
-                    </button>
-                </div>
-            </form>
-        </Fragment>
-    }
+            </div>
+            <div>
+                <button type="submit"> Submit </button>
+            </div>
+        </form>
+    </>
 };
-
+LoginForm.propTypes = {
+    //check types of props
+    name: PropTypes.string,
+    label: PropTypes.string,
+    placeholder: PropTypes.string,
+};
 export default reduxForm({
     form: 'loginForm',
-    destroyOnUnmount: false,
-})(connect(null, null)(LoginForm));
+})(LoginForm);

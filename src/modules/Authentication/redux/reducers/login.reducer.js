@@ -2,7 +2,7 @@ import {
 	LOG_IN_REQUEST,
 	LOG_IN_REQUEST_FAILURE,
 	LOG_IN_REQUEST_SUCCESS,
-	LOG_OUT_REQUEST_SUCCESS,
+	LOG_OUT_REQUEST
 } from '../actions/login.action';
 
 const initialState = {
@@ -25,7 +25,7 @@ export const loginModuleReducer = (state = initialState, action) => {
 				loggedIn: true,
 				error: null
 			};
-		case LOG_OUT_REQUEST_SUCCESS:
+		case LOG_OUT_REQUEST:
 			return {
 				...state,
 				loading: false,
