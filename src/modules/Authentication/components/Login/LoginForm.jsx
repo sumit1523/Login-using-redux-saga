@@ -16,6 +16,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 const LoginForm = ({ handleSubmit }) => {
     return <>
         <form onSubmit={handleSubmit} >
+            <div className="login_header">Employee Login</div>
             <div className="login_div">
                 <div>
                     <Field
