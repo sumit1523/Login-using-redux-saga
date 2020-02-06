@@ -5,12 +5,15 @@
     border-radius: 20px;
     line-height: 1;
     padding: 35px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
 }
 .cardItems{
     border: 1px solid;
     margin: 25px;
     padding: 35px;
-    width: 500px;
+    width: 250px;
     background: grey;
     border-radius: 10px;
 }

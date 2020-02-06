@@ -37,3 +37,11 @@
 	background-color: #1a495b;
 	color: white;
 }
+
+.error{
+	margin: 0px 0px 10px 0px;
+    color: red;
+}
+.loginInput{
+	margin: 5px 0px 10px 0px;
+}

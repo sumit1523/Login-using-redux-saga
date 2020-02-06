@@ -6,17 +6,17 @@ import './css/login.css';
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
         <label>{label}</label>
-        <div >
+        <div className="loginInput">
             <input {...input} placeholder={label} type={type} className="input_style" />
             {touched &&
-                ((error && <span>{error}</span>))}
+                ((error && <p className="error">{error}</p>))}
         </div>
     </div>
 )
 const LoginForm = ({ handleSubmit }) => {
     return <>
         <form onSubmit={handleSubmit} >
-            <div className="login_header">Employee Login</div>
+            <div className="login_header">Admin Login</div>
             <div className="login_div">
                 <div>
                     <Field

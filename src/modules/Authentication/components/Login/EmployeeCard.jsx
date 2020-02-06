@@ -19,7 +19,6 @@ export default class EmployeeCard extends Component {
         const users = Empoloyee.user;
         return (
             <div className="card">
-                Employee Card
                 {users && this.employeeDetails(users)}
             </div>
         )
