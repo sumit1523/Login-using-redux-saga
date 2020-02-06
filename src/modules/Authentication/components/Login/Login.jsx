@@ -24,7 +24,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(class Login extends 
     render() {
         const { loggedIn } = this.props;
         return <>
-            <div>
+            <div className="loginWrap">
                 {loggedIn ? <Dashboard /> : <LoginForm onSubmit={this.submit} />}
             </div>
         </>
