@@ -48,7 +48,6 @@ LoginForm.propTypes = {
     //check types of props
     name: PropTypes.string,
     label: PropTypes.string,
-    placeholder: PropTypes.string,
 };
 export default reduxForm({
     form: 'loginForm',

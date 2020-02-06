@@ -23,18 +23,16 @@ export const loginModuleReducer = (state = initialState, action) => {
 				...state,
 				loading: false,
 				loggedIn: true,
-				error: null
+			};
+		case LOG_IN_REQUEST_FAILURE:
+			return {
+				...state
 			};
 		case LOG_OUT_REQUEST:
 			return {
 				...state,
 				loading: false,
 				loggedIn: false,
-			};
-		case LOG_IN_REQUEST_FAILURE:
-			return {
-				...state,
-				error: action.error
 			};
 		default:
 			return state;

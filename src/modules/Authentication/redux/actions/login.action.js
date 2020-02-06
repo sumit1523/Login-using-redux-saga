@@ -12,8 +12,8 @@ export const logInRequestSuccess = () => ({
 	type: LOG_IN_REQUEST_SUCCESS
 });
 
-export const logInRequestFailure = error => ({
-	type: LOG_IN_REQUEST_FAILURE, error
+export const logInRequestFailure = () => ({
+	type: LOG_IN_REQUEST_FAILURE
 });
 
 export const logOutRequest = () => ({

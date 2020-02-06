@@ -1,12 +1,13 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import {
 	LOG_IN_REQUEST,
 	logInRequestSuccess,
 	logInRequestFailure,
 } from '../actions/login.action';
+import login from '../../components/Login/api/login';
 
 function* loginRequestSaga({ payload: { email, password } }) {
-	if (email === 'hruday@gmail.com' && password === '123') {
+	if (email === login.username && password === login.password) {
 		yield put(logInRequestSuccess());
 		console.log('Login Success');
 	} else {
@@ -16,7 +17,7 @@ function* loginRequestSaga({ payload: { email, password } }) {
 }
 
 export default function* loginSaga() {
-	yield takeEvery(LOG_IN_REQUEST, loginRequestSaga);
+	yield takeLatest(LOG_IN_REQUEST, loginRequestSaga);
 }
 
 
