@@ -1,0 +1,32 @@
+.card{
+    border: 5px solid;
+    margin: 5px;
+    background: dimgray;
+    border-radius: 20px;
+    line-height: 1;
+    padding: 35px;
+}
+.cardItems{
+    border: 1px solid;
+    margin: 25px;
+    padding: 35px;
+    width: 500px;
+    background: grey;
+    border-radius: 10px;
+}
+
+#logout_button{
+	box-shadow: 0 8px 60px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 150px;
+	height: 40px;
+	border-radius: 10px;
+	border: none;
+	margin-top: 5%;
+	outline: none;
+	background-color: #4cddc0;
+	transition: 400ms ease-in-out; 
+}
+#logout_button:hover{
+	background-color: #1a495b;
+	color: white;
+}

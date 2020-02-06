@@ -17,7 +17,9 @@ export default connect(null, mapDispatchToProps)(class Dashboard extends Compone
         return <>
             <article>
                 <section className='text-section'>
-                    <button onClick={logOutRequest}>Logout</button>
+                    <div>
+                        <button id="logout_button" onClick={logOutRequest}>Logout</button>
+                    </div>
                     <h1>Employee Dashboard</h1>
                     <p>Welcome, you are logged in!</p>
                     <EmployeeCard />

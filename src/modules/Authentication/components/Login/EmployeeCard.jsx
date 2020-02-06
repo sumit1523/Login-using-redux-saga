@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Empoloyee from '../Login/api/Employee';
-
+import './css/employee.css';
 export default class EmployeeCard extends Component {
 
     employeeDetails = (users) => {
         return users.map(user =>
-            <div key={user.id} style={{ border: "1px solid", margin: "5px" }}>
+            <div key={user.id} className="cardItems">
                 <p>Name: {user.name}</p>
                 <p>Age: {user.age}</p>
                 <p>Gender: {user.gender}</p>
@@ -18,7 +18,7 @@ export default class EmployeeCard extends Component {
     render() {
         const users = Empoloyee.user;
         return (
-            <div>
+            <div className="card">
                 Employee Card
                 {users && this.employeeDetails(users)}
             </div>

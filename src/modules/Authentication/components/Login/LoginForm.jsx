@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { Field, reduxForm } from 'redux-form'
 import { required, email, maxLengthP } from './loginValidation.js';
-
+import './css/login.css';
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
         <label>{label}</label>
-        <div>
-            <input {...input} placeholder={label} type={type} />
+        <div >
+            <input {...input} placeholder={label} type={type} className="input_style" />
             {touched &&
                 ((error && <span>{error}</span>))}
         </div>
@@ -15,8 +15,8 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 const LoginForm = ({ handleSubmit }) => {
     return <>
-        <form onSubmit={handleSubmit}>
-            <div>
+        <form onSubmit={handleSubmit} >
+            <div className="login_div">
                 <div>
                     <Field
                         name="email"
@@ -26,8 +26,6 @@ const LoginForm = ({ handleSubmit }) => {
                         validate={[required, email]}
                     />
                 </div>
-            </div>
-            <div>
                 <div>
                     <Field
                         name="password"
@@ -37,9 +35,9 @@ const LoginForm = ({ handleSubmit }) => {
                         validate={[required, maxLengthP]}
                     />
                 </div>
-            </div>
-            <div>
-                <button type="submit"> Submit </button>
+                <div>
+                    <button id="login_button" type="submit"> Submit </button>
+                </div>
             </div>
         </form>
     </>
