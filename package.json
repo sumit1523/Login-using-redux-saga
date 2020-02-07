@@ -1,5 +1,5 @@
 {
-  "homepage": "http://sumit1523.github.io/Login-using-redux-saga",
+  "homepage": "https://sumit1523.github.io/Login-using-redux-saga",
   "name": "login",
   "version": "0.1.0",
   "private": true,
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
